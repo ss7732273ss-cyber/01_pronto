@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:ital,wght@0,450;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Custom board controller shadows & colors */
+  --color-plum-950: #21102b;
+  --color-plum-900: #3b184c;
+  --color-plum-850: #4f1d66;
+  --color-zinc-850: #202227;
+  --color-zinc-805: #2c2e33;
+}
+
+/* Custom scrollbar behaviors */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1eff4;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8d3e2;
+  border-radius: 99px;
+  border: 2px solid #f1eff4;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a78bfa;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #fcfbfe;
+}
