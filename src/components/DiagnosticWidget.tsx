@@ -422,25 +422,13 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
   const animationDuration = shouldReduceMotion ? 0 : 0.18;
 
   return (
-    <section
-  id="companies"
-  className="py-20 sm:py-28 relative bg-transparent"
->
-  {/* мягкий фон страницы, чтобы не было разрыва */}
-  <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-white" />
-
-  {/* мягкая “подсветка зоны инструмента” */}
-  <div className="absolute inset-0 pointer-events-none">
-    <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-purple-500/10 blur-[120px]" />
-  </div>
-
-  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+    <section id="companies" className="py-16 sm:py-24 bg-gradient-to-b from-white via-[#FCFAFF] to-white border-b border-zinc-200/70 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div className="absolute -top-32 left-[12%] w-80 h-80 bg-purple-700/20 rounded-full blur-3xl" />
-        <div className="absolute top-[38%] -right-32 w-96 h-96 bg-fuchsia-700/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-48 left-[32%] w-[34rem] h-[34rem] bg-indigo-800/20 rounded-full blur-3xl" />
+        <div className="absolute -top-32 left-[12%] w-80 h-80 bg-purple-300/20 rounded-full blur-3xl" />
+        <div className="absolute top-[38%] -right-32 w-96 h-96 bg-fuchsia-300/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-48 left-[32%] w-[34rem] h-[34rem] bg-indigo-200/20 rounded-full blur-3xl" />
         <div
-          className="absolute inset-0 opacity-[0.08]"
+          className="absolute inset-0 opacity-[0.035]"
           style={{
             backgroundImage:
               'linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)',
@@ -452,19 +440,19 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <div className="max-w-4xl mx-auto space-y-5 mb-10 sm:mb-14">
-          <span className="font-mono text-[10px] font-black text-fuchsia-200 bg-fuchsia-500/10 border border-fuchsia-400/25 px-4 py-1.5 rounded-full uppercase tracking-[0.2em] inline-flex items-center shadow-[0_0_24px_rgba(217,70,239,0.12)] backdrop-blur-xl">
+          <span className="font-mono text-[10px] font-black text-purple-700 bg-purple-50 border border-purple-200 px-4 py-1.5 rounded-full uppercase tracking-[0.2em] inline-flex items-center shadow-sm backdrop-blur-xl">
             БИЗНЕС-ДИАГНОСТИКА ОНЛАЙН
           </span>
-          <h2 className="font-sans text-3xl sm:text-5xl font-black text-white tracking-[-0.035em] leading-[1.05]">
+          <h2 className="font-sans text-3xl sm:text-5xl font-black text-zinc-950 tracking-[-0.035em] leading-[1.05]">
             Экспресс-тест структуры вашей компании
           </h2>
-          <p className="font-sans text-zinc-300 text-sm sm:text-lg leading-relaxed max-w-3xl mx-auto">
+          <p className="font-sans text-zinc-600 text-sm sm:text-lg leading-relaxed max-w-3xl mx-auto">
             Ответьте на три вопроса и получите ориентировочный профиль компании: её архетип,
             уровень управляемости и основные зоны внимания.
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto bg-white/70 backdrop-blur-xl border border-white/20 p-4 sm:p-7 md:p-10 rounded-[28px] shadow-[0_32px_100px_rgba(0,0,0,0.55),0_0_60px_rgba(126,34,206,0.08)] backdrop-blur-2xl relative overflow-hidden">
+        <div className="max-w-5xl mx-auto bg-[#090511]/95 p-4 sm:p-7 md:p-10 rounded-[28px] border border-purple-300/20 shadow-[0_30px_80px_rgba(39,20,64,0.22),0_0_45px_rgba(126,34,206,0.08)] backdrop-blur-2xl relative overflow-hidden">
           <div className="absolute inset-x-16 top-0 h-px bg-gradient-to-r from-transparent via-fuchsia-400/70 to-transparent" aria-hidden="true" />
           <div className="border-b border-white/10 pb-5 mb-6 sm:mb-8">
             <div className="flex items-center justify-between gap-3">
@@ -874,7 +862,6 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
           </AnimatePresence>
         </div>
       </div>
-      </div>
-</section>
+    </section>
   );
 }
