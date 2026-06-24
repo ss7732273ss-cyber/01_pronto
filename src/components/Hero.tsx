@@ -15,8 +15,9 @@ import {
   Award,
   Zap
 } from 'lucide-react';
-const imgSquare = new URL('../assets/images/svetlana_portrait_square_1781785524985.jpg', import.meta.url).href;
-const imgLandscape = new URL('../assets/images/svetlana_workspace_landscape_1781785549833.jpg', import.meta.url).href;
+const imgExpert = new URL('../assets/images/expert.jpg', import.meta.url).href;
+const imgArchitect = new URL('../assets/images/architect.jpg', import.meta.url).href;
+const imgNavigator = new URL('../assets/images/navigator.jpg', import.meta.url).href;
 
 interface HeroProps {
   onStartDiagnostic: () => void;
@@ -45,7 +46,7 @@ export default function Hero({ onStartDiagnostic, onContact }: HeroProps) {
         { label: 'Точность расчётов', value: '100%' }
       ],
       icon: Award,
-      image: imgSquare,
+      image: imgExpert,
       accentBg: 'bg-purple-50/70 border-purple-200/60',
       accentText: 'text-purple-700',
       badgeBg: 'bg-purple-100 text-purple-800 border-purple-200'
@@ -66,7 +67,7 @@ export default function Hero({ onStartDiagnostic, onContact }: HeroProps) {
         { label: 'Снижение хаоса', value: 'в 3 раза' }
       ],
       icon: Grid,
-      image: imgLandscape,
+      image: imgArchitect,
       accentBg: 'bg-indigo-50/70 border-indigo-200/60',
       accentText: 'text-indigo-700',
       badgeBg: 'bg-indigo-100 text-indigo-800 border-indigo-200'
@@ -87,7 +88,7 @@ export default function Hero({ onStartDiagnostic, onContact }: HeroProps) {
         { label: 'Защита от разрывов', value: 'Надёжная' }
       ],
       icon: Coins,
-      image: imgSquare, // Using high quality alternative or crop
+     image: imgNavigator, // Using high quality alternative or crop
       accentBg: 'bg-fuchsia-50/70 border-fuchsia-200/60',
       accentText: 'text-fuchsia-700',
       badgeBg: 'bg-fuchsia-100 text-fuchsia-800 border-fuchsia-200'
