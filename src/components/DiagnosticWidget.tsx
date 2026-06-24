@@ -464,7 +464,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto bg-white/70 backdrop-blur-xl border border-white/20 p-4 sm:p-7 md:p-10 rounded-[28px] border border-white/10 shadow-[0_32px_100px_rgba(0,0,0,0.55),0_0_60px_rgba(126,34,206,0.08)] backdrop-blur-2xl relative overflow-hidden">
+        <div className="max-w-5xl mx-auto bg-white/70 backdrop-blur-xl border border-white/20 p-4 sm:p-7 md:p-10 rounded-[28px] shadow-[0_32px_100px_rgba(0,0,0,0.55),0_0_60px_rgba(126,34,206,0.08)] backdrop-blur-2xl relative overflow-hidden">
           <div className="absolute inset-x-16 top-0 h-px bg-gradient-to-r from-transparent via-fuchsia-400/70 to-transparent" aria-hidden="true" />
           <div className="border-b border-white/10 pb-5 mb-6 sm:mb-8">
             <div className="flex items-center justify-between gap-3">
