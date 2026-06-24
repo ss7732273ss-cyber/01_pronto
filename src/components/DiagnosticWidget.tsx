@@ -422,7 +422,19 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
   const animationDuration = shouldReduceMotion ? 0 : 0.18;
 
   return (
-    <section id="companies" className="py-16 sm:py-24 bg-[#03000A] border-b border-purple-950/70 relative overflow-hidden">
+    <section
+  id="companies"
+  className="py-20 sm:py-28 relative bg-transparent"
+>
+  {/* мягкий фон страницы, чтобы не было разрыва */}
+  <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-white" />
+
+  {/* мягкая “подсветка зоны инструмента” */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-purple-500/10 blur-[120px]" />
+  </div>
+
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute -top-32 left-[12%] w-80 h-80 bg-purple-700/20 rounded-full blur-3xl" />
         <div className="absolute top-[38%] -right-32 w-96 h-96 bg-fuchsia-700/20 rounded-full blur-3xl" />
@@ -862,6 +874,8 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
           </AnimatePresence>
         </div>
       </div>
+      </div>
+</section>
     </section>
   );
 }
