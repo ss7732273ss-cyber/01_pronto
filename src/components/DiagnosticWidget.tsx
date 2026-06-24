@@ -423,29 +423,29 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
     <section id="companies" className="py-16 sm:py-24 bg-[#FCFBFE] border-b border-zinc-200/60 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <div className="max-w-3xl mx-auto space-y-4 mb-10 sm:mb-16">
-          <span className="font-mono text-[10px] font-black text-purple-700 bg-purple-100 border border-purple-250 px-3 py-1 rounded-sm uppercase tracking-wider inline-block">
+          <span className="font-mono text-[10px] font-black text-purple-700 bg-purple-100 border border-purple-200 px-3 py-1 rounded-sm uppercase tracking-wider inline-block">
             БИЗНЕС-ДИАГНОСТИКА ОНЛАЙН
           </span>
           <h2 className="font-sans text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
             Экспресс-тест структуры вашей компании
           </h2>
-          <p className="font-sans text-zinc-650 text-sm sm:text-base leading-relaxed">
+          <p className="font-sans text-zinc-600 text-sm sm:text-base leading-relaxed">
             Ответьте на три вопроса и получите ориентировочный профиль компании: её архетип,
             уровень управляемости и основные зоны внимания.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto bg-white p-4 sm:p-6 md:p-10 rounded-sm border border-zinc-200 shadow-xl relative">
-          <div className="border-b border-zinc-150 pb-4 mb-6 sm:mb-8">
+          <div className="border-b border-zinc-200 pb-4 mb-6 sm:mb-8">
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center space-x-2.5 min-w-0 text-left">
-                <Activity className="w-5 h-5 text-purple-650 shrink-0" aria-hidden="true" />
+                <Activity className="w-5 h-5 text-purple-600 shrink-0" aria-hidden="true" />
                 <span className="font-mono text-[10px] sm:text-xs text-zinc-800 font-bold tracking-wider leading-snug">
                   МОДУЛЬ ЭКСПРЕСС-АНАЛИЗА БИЗНЕСА
                 </span>
               </div>
               {!showResult && (
-                <span className="font-mono text-[9px] sm:text-[10px] text-zinc-450 font-black whitespace-nowrap">
+                <span className="font-mono text-[9px] sm:text-[10px] text-zinc-500 font-black whitespace-nowrap">
                   ЭТАП {step} ИЗ 3
                 </span>
               )}
@@ -485,7 +485,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
               >
                 {step === 1 && (
                   <div className="space-y-4" role="group" aria-labelledby="diagnostic-question-1">
-                    <h3 id="diagnostic-question-1" className="font-sans text-lg font-bold text-zinc-900 tracking-tight">
+                    <h3 id="diagnostic-question-1" className="font-sans text-lg sm:text-xl font-extrabold text-zinc-950 tracking-tight leading-snug">
                       1. В какой отрасли работает ваша компания?
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
@@ -499,14 +499,18 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                             onClick={() => selectIndustry(item.id)}
                             aria-pressed={isSelected}
                             whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
-                            className={`p-4 rounded-sm text-left border font-semibold text-xs transition-colors cursor-pointer flex items-center justify-between gap-3 min-h-12 ${
+                            className={`p-4 rounded-sm text-left border text-xs transition-all duration-150 cursor-pointer flex items-center justify-between gap-3 min-h-12 ${
                               isSelected
-                                ? 'bg-purple-550 border-purple-600 text-white font-bold shadow-md'
-                                : 'bg-zinc-50 border-zinc-200 text-zinc-650 hover:bg-purple-50/55 hover:border-purple-300 hover:text-purple-900'
+                                ? 'bg-purple-50 border-purple-500 text-purple-950 font-extrabold shadow-sm ring-1 ring-purple-200'
+                                : 'bg-zinc-50 border-zinc-200 text-zinc-700 font-semibold hover:bg-purple-50 hover:border-purple-300 hover:text-purple-950 hover:shadow-sm'
                             }`}
                           >
-                            <span>{item.name}</span>
-                            {isSelected && <Check className="w-4 h-4 shrink-0" aria-hidden="true" />}
+                            <span className="min-w-0">{item.name}</span>
+                            {isSelected && (
+                              <span className="w-5 h-5 rounded-full bg-purple-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                                <Check className="w-3 h-3" aria-hidden="true" />
+                              </span>
+                            )}
                           </motion.button>
                         );
                       })}
@@ -516,7 +520,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
 
                 {step === 2 && (
                   <div className="space-y-4" role="group" aria-labelledby="diagnostic-question-2">
-                    <h3 id="diagnostic-question-2" className="font-sans text-lg font-bold text-zinc-900 tracking-tight">
+                    <h3 id="diagnostic-question-2" className="font-sans text-lg sm:text-xl font-extrabold text-zinc-950 tracking-tight leading-snug">
                       2. Что на сегодняшний день сильнее всего мешает развитию компании?
                     </h3>
                     <div className="space-y-3 pt-2">
@@ -530,15 +534,17 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                             onClick={() => selectBottleneck(item.id)}
                             aria-pressed={isSelected}
                             whileTap={shouldReduceMotion ? undefined : { scale: 0.995 }}
-                            className={`w-full p-4 rounded-sm text-left border font-semibold text-xs sm:text-sm transition-colors flex items-center justify-between gap-3 cursor-pointer min-h-12 ${
+                            className={`w-full p-4 rounded-sm text-left border text-xs sm:text-sm transition-all duration-150 flex items-center justify-between gap-3 cursor-pointer min-h-12 ${
                               isSelected
-                                ? 'bg-purple-550 border-purple-600 text-white font-bold shadow-md'
-                                : 'bg-zinc-50 border-zinc-200 text-zinc-650 hover:bg-purple-50/55 hover:border-purple-300 hover:text-purple-900'
+                                ? 'bg-purple-50 border-purple-500 text-purple-950 font-extrabold shadow-sm ring-1 ring-purple-200'
+                                : 'bg-zinc-50 border-zinc-200 text-zinc-700 font-semibold hover:bg-purple-50 hover:border-purple-300 hover:text-purple-950 hover:shadow-sm'
                             }`}
                           >
-                            <span>{item.name}</span>
+                            <span className="min-w-0">{item.name}</span>
                             {isSelected ? (
-                              <Check className="w-4 h-4 shrink-0" aria-hidden="true" />
+                              <span className="w-5 h-5 rounded-full bg-purple-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                                <Check className="w-3 h-3" aria-hidden="true" />
+                              </span>
                             ) : (
                               <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" aria-hidden="true" />
                             )}
@@ -560,7 +566,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
 
                 {step === 3 && (
                   <div className="space-y-4" role="group" aria-labelledby="diagnostic-question-3">
-                    <h3 id="diagnostic-question-3" className="font-sans text-lg font-bold text-zinc-900 tracking-tight">
+                    <h3 id="diagnostic-question-3" className="font-sans text-lg sm:text-xl font-extrabold text-zinc-950 tracking-tight leading-snug">
                       3. Каков текущий масштаб организации?
                     </h3>
                     <div className="space-y-3 pt-2">
@@ -574,14 +580,18 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                             onClick={() => setScale(item.id)}
                             aria-pressed={isSelected}
                             whileTap={shouldReduceMotion ? undefined : { scale: 0.995 }}
-                            className={`w-full p-4 rounded-sm text-left border font-semibold text-xs sm:text-sm transition-colors flex items-center justify-between gap-3 cursor-pointer min-h-12 ${
+                            className={`w-full p-4 rounded-sm text-left border text-xs sm:text-sm transition-all duration-150 flex items-center justify-between gap-3 cursor-pointer min-h-12 ${
                               isSelected
-                                ? 'bg-purple-550 border-purple-650 text-white font-bold shadow-md'
-                                : 'bg-zinc-50 border-zinc-200 text-zinc-650 hover:bg-purple-50/55 hover:border-purple-300 hover:text-purple-900'
+                                ? 'bg-purple-50 border-purple-500 text-purple-950 font-extrabold shadow-sm ring-1 ring-purple-200'
+                                : 'bg-zinc-50 border-zinc-200 text-zinc-700 font-semibold hover:bg-purple-50 hover:border-purple-300 hover:text-purple-950 hover:shadow-sm'
                             }`}
                           >
-                            <span>{item.name}</span>
-                            {isSelected && <Check className="w-4 h-4 shrink-0" aria-hidden="true" />}
+                            <span className="min-w-0">{item.name}</span>
+                            {isSelected && (
+                              <span className="w-5 h-5 rounded-full bg-purple-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                                <Check className="w-3 h-3" aria-hidden="true" />
+                              </span>
+                            )}
                           </motion.button>
                         );
                       })}
@@ -599,7 +609,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                           type="button"
                           onClick={generateReport}
                           whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
-                          className="w-full sm:w-auto flex items-center justify-center space-x-2 bg-gradient-to-br from-purple-650 to-indigo-600 border border-purple-500 text-white font-bold text-xs tracking-wider uppercase px-6 py-3.5 rounded-sm shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+                          className="w-full sm:w-auto flex items-center justify-center space-x-2 bg-gradient-to-br from-purple-700 to-indigo-600 border border-purple-600 text-white font-bold text-xs tracking-wider uppercase px-6 py-3.5 rounded-sm shadow-md hover:shadow-lg hover:from-purple-800 hover:to-indigo-700 transition-all cursor-pointer"
                         >
                           <span>Показать результат</span>
                           <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -622,43 +632,53 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                 transition={{ duration: animationDuration, ease: 'easeOut' }}
                 className="text-left space-y-6 outline-none"
               >
-                <div className="bg-purple-50 p-4 border border-purple-200 rounded-sm flex items-start gap-4" aria-live="polite">
-                  <motion.div
-                    initial={shouldReduceMotion ? false : { scale: 0.9, rotate: -5 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
-                    className="p-2.5 rounded-sm bg-purple-100 border border-purple-250 shrink-0"
-                  >
-                    <Sparkles className="w-5 h-5 text-purple-600" aria-hidden="true" />
-                  </motion.div>
-                  <div>
-                    <h4 className="font-sans font-bold text-zinc-950 text-base leading-tight mb-1">
-                      Ваш экспресс-профиль готов
-                    </h4>
-                    <p className="font-sans text-xs text-zinc-600 leading-relaxed">
-                      Результат показывает наиболее близкие управленческие паттерны по трём вашим ответам.
-                    </p>
+                <div
+                  className="relative overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-purple-950 p-5 sm:p-6 border border-zinc-800 rounded-sm shadow-xl"
+                  aria-live="polite"
+                >
+                  <div className="absolute -right-12 -top-16 w-44 h-44 rounded-full bg-purple-600/25 blur-3xl pointer-events-none" aria-hidden="true" />
+                  <div className="absolute -left-16 -bottom-20 w-40 h-40 rounded-full bg-indigo-600/20 blur-3xl pointer-events-none" aria-hidden="true" />
+                  <div className="relative z-10 flex items-start gap-4">
+                    <motion.div
+                      initial={shouldReduceMotion ? false : { scale: 0.9, rotate: -5 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
+                      className="p-2.5 rounded-sm bg-white/10 border border-white/20 shrink-0 shadow-lg"
+                    >
+                      <Sparkles className="w-5 h-5 text-purple-200" aria-hidden="true" />
+                    </motion.div>
+                    <div>
+                      <span className="font-mono text-[9px] text-purple-200 uppercase tracking-[0.2em] block font-bold mb-1.5">
+                        РЕЗУЛЬТАТ ЭКСПРЕСС-ТЕСТА
+                      </span>
+                      <h4 className="font-sans font-extrabold text-white text-xl sm:text-2xl tracking-tight leading-tight mb-1.5">
+                        Ваш профиль управляемости готов
+                      </h4>
+                      <p className="font-sans text-xs sm:text-sm text-zinc-300 leading-relaxed max-w-2xl">
+                        Наиболее близкие управленческие паттерны по трём вашим ответам.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
-                  <div className="lg:col-span-3 border border-zinc-200 bg-white rounded-sm p-5 sm:p-6 space-y-4">
-                    <span className="font-mono text-[9px] text-purple-700 uppercase tracking-widest block font-bold">
+                  <div className="lg:col-span-3 border border-purple-200 bg-gradient-to-br from-white via-white to-purple-50 rounded-sm p-5 sm:p-7 space-y-5 shadow-lg shadow-purple-950/5">
+                    <span className="font-mono text-[9px] text-purple-700 uppercase tracking-[0.18em] block font-black">
                       ОСНОВНОЙ АРХЕТИП КОМПАНИИ
                     </span>
                     <div className="flex flex-wrap items-center justify-between gap-3">
-                      <h4 className="font-sans text-xl sm:text-2xl font-extrabold text-zinc-950 tracking-tight">
+                      <h4 className="font-sans text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight leading-none">
                         {reportDetails.primary.name}
                       </h4>
-                      <span className="font-mono text-xs font-black text-purple-700 bg-purple-100 border border-purple-200 px-3 py-1.5 rounded-sm whitespace-nowrap">
+                      <span className="font-mono text-xs font-black text-white bg-purple-600 border border-purple-700 px-3 py-2 rounded-sm whitespace-nowrap shadow-sm">
                         {reportDetails.primary.match}% совпадения
                       </span>
                     </div>
-                    <p className="font-sans text-sm text-zinc-650 leading-relaxed">
+                    <p className="font-sans text-sm sm:text-base text-zinc-700 leading-relaxed">
                       {reportDetails.primary.description}
                     </p>
-                    <div className="border-t border-zinc-150 pt-4">
-                      <span className="font-mono text-[9px] text-zinc-450 uppercase tracking-widest block font-bold mb-1.5">
+                    <div className="bg-white/80 border border-purple-100 p-4 rounded-sm shadow-sm">
+                      <span className="font-mono text-[9px] text-purple-700 uppercase tracking-widest block font-black mb-1.5">
                         ЗОНА ВНИМАНИЯ
                       </span>
                       <p className="font-sans text-xs sm:text-sm text-zinc-700 leading-relaxed">
@@ -667,28 +687,28 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                     </div>
                   </div>
 
-                  <div className="lg:col-span-2 bg-zinc-50 border border-zinc-200 rounded-sm p-5 sm:p-6 flex flex-col justify-between gap-5">
+                  <div className="lg:col-span-2 bg-zinc-950 border border-zinc-800 rounded-sm p-5 sm:p-7 flex flex-col justify-between gap-6 shadow-lg">
                     <div>
-                      <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-widest block font-bold mb-2">
+                      <span className="font-mono text-[9px] text-purple-200 uppercase tracking-[0.18em] block font-black mb-3">
                         УПРАВЛЯЕМОСТЬ БИЗНЕСА
                       </span>
                       <div className="flex items-end gap-1.5">
-                        <span className="font-sans text-4xl font-black text-zinc-950 leading-none">
+                        <span className="font-sans text-5xl sm:text-6xl font-black text-white tracking-tighter leading-none">
                           {reportDetails.manageability}
                         </span>
-                        <span className="font-mono text-xs text-zinc-450 font-bold pb-1">/ 100</span>
+                        <span className="font-mono text-xs text-zinc-400 font-bold pb-1">/ 100</span>
                       </div>
                     </div>
                     <div>
-                      <div className="h-2.5 bg-white border border-zinc-200 rounded-full overflow-hidden">
+                      <div className="h-3 bg-white/10 border border-white/10 rounded-full overflow-hidden">
                         <motion.div
-                          className="h-full bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full"
+                          className="h-full bg-gradient-to-r from-purple-400 via-purple-500 to-indigo-500 rounded-full"
                           initial={{ width: shouldReduceMotion ? `${reportDetails.manageability}%` : 0 }}
                           animate={{ width: `${reportDetails.manageability}%` }}
                           transition={{ duration: shouldReduceMotion ? 0 : 0.35, ease: 'easeOut' }}
                         />
                       </div>
-                      <p className="font-sans text-xs text-zinc-650 leading-relaxed mt-2.5">
+                      <p className="font-sans text-xs sm:text-sm font-semibold text-zinc-300 leading-relaxed mt-3">
                         {reportDetails.manageabilityLevel}
                       </p>
                     </div>
@@ -697,17 +717,17 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                   <div className="space-y-3.5">
-                    <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-widest block font-bold">
+                    <span className="font-mono text-[9px] text-zinc-600 uppercase tracking-[0.18em] block font-black">
                       БЛИЗКИЕ АРХЕТИПЫ
                     </span>
                     <div className="space-y-2">
                       {reportDetails.related.map((archetype) => (
-                        <div key={archetype.id} className="bg-zinc-50 border border-zinc-200 rounded-sm p-3.5">
+                        <div key={archetype.id} className="bg-white border border-zinc-200 rounded-sm p-4 shadow-sm">
                           <div className="flex items-center justify-between gap-3 mb-2">
-                            <span className="font-sans text-xs sm:text-sm font-bold text-zinc-800">
+                            <span className="font-sans text-xs sm:text-sm font-extrabold text-zinc-900">
                               {archetype.name}
                             </span>
-                            <span className="font-mono text-[10px] font-bold text-zinc-500 whitespace-nowrap">
+                            <span className="font-mono text-[10px] font-black text-purple-700 whitespace-nowrap">
                               {archetype.match}%
                             </span>
                           </div>
@@ -725,15 +745,15 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                   </div>
 
                   <div className="space-y-3.5">
-                    <span className="font-mono text-[9px] text-purple-700 uppercase tracking-widest block font-bold">
+                    <span className="font-mono text-[9px] text-purple-700 uppercase tracking-[0.18em] block font-black">
                       МИНИ-КАРТА СОСТОЯНИЯ
                     </span>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                       {reportDetails.dimensions.map((dimension) => (
-                        <div key={dimension.id} className="bg-purple-50/55 border border-purple-100 rounded-sm p-3.5">
+                        <div key={dimension.id} className="bg-purple-50/60 border border-purple-100 rounded-sm p-4 shadow-sm">
                           <div className="flex items-center justify-between gap-3 mb-2">
-                            <span className="font-sans text-xs font-bold text-zinc-800">{dimension.label}</span>
-                            <span className="font-mono text-[10px] font-black text-purple-700">
+                            <span className="font-sans text-xs font-extrabold text-zinc-900">{dimension.label}</span>
+                            <span className="font-mono text-xs font-black text-purple-700">
                               {dimension.value}
                             </span>
                           </div>
@@ -751,25 +771,26 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                   </div>
                 </div>
 
-                <p className="font-sans text-[11px] text-zinc-500 leading-relaxed bg-zinc-50 border-l-2 border-purple-300 px-3 py-2.5">
+                <p className="font-sans text-[11px] text-zinc-600 leading-relaxed bg-zinc-50 border border-zinc-200 border-l-2 border-l-purple-500 px-3 py-2.5 rounded-sm">
                   Это ориентировочное наблюдение по вашим ответам, а не полноценная диагностика или экспертное заключение.
                 </p>
 
-                <div className="bg-zinc-50 border border-zinc-200 rounded-sm p-5 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-5">
+                <div className="relative overflow-hidden bg-gradient-to-r from-purple-700 to-indigo-700 border border-purple-600 rounded-sm p-5 sm:p-6 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-5 shadow-xl shadow-purple-950/20">
+                  <div className="absolute -right-10 -bottom-16 w-40 h-40 rounded-full bg-white/10 blur-2xl pointer-events-none" aria-hidden="true" />
                   <div className="space-y-1 text-left w-full">
-                    <span className="font-mono text-[8px] text-zinc-400 uppercase tracking-widest block font-bold">
+                    <span className="font-mono text-[8px] text-purple-200 uppercase tracking-widest block font-black">
                       СЛЕДУЮЩИЙ ШАГ
                     </span>
-                    <span className="font-sans font-bold text-zinc-900 text-sm sm:text-base tracking-tight block">
+                    <span className="font-sans font-extrabold text-white text-base sm:text-lg tracking-tight block">
                       Уточнить реальную картину и приоритеты изменений
                     </span>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                  <div className="relative z-10 flex flex-col sm:flex-row gap-3 w-full md:w-auto">
                     <button
                       type="button"
                       onClick={resetForm}
-                      className="w-full sm:w-auto px-5 py-3 rounded-sm border border-zinc-200 bg-white text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 font-mono text-xs uppercase tracking-wider transition-colors shrink-0 font-bold cursor-pointer"
+                      className="w-full sm:w-auto px-5 py-3 rounded-sm border border-white/30 bg-white/10 text-white hover:bg-white/20 font-mono text-xs uppercase tracking-wider transition-colors shrink-0 font-bold cursor-pointer"
                     >
                       Пройти ещё раз
                     </button>
@@ -777,7 +798,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                       type="button"
                       onClick={handleSyncToForm}
                       whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
-                      className="w-full md:w-auto inline-flex items-center justify-center space-x-2 bg-gradient-to-br from-purple-600 to-indigo-650 border border-purple-500 text-white font-bold text-xs tracking-wider uppercase px-6 py-3.5 rounded-sm shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+                      className="w-full md:w-auto inline-flex items-center justify-center space-x-2 bg-white border border-white text-purple-800 font-extrabold text-xs tracking-wider uppercase px-6 py-3.5 rounded-sm shadow-lg hover:bg-purple-50 hover:shadow-xl transition-all cursor-pointer"
                     >
                       <span>Обсудить результаты диагностики</span>
                       <ArrowRight className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
