@@ -452,12 +452,12 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
           </p>
         </div>
 
-        <div className="w-full max-w-5xl mx-auto bg-[#090511]/95 p-4 sm:p-7 md:p-10 rounded-[28px] border border-purple-300/20 shadow-[0_30px_80px_rgba(39,20,64,0.22),0_0_45px_rgba(126,34,206,0.08)] backdrop-blur-2xl relative overflow-hidden">
-          <div className="absolute inset-x-16 top-0 h-px bg-gradient-to-r from-transparent via-fuchsia-400/70 to-transparent" aria-hidden="true" />
-          <div className="border-b border-white/10 pb-5 mb-6 sm:mb-8">
+        <div className="w-full max-w-6xl mx-auto bg-gradient-to-br from-[#241750]/95 via-[#111A42]/95 to-[#321258]/95 p-4 sm:p-7 md:p-10 rounded-[30px] border border-fuchsia-300/40 ring-8 ring-white/70 shadow-[0_34px_90px_rgba(64,35,105,0.25),0_0_55px_rgba(217,70,239,0.16)] backdrop-blur-3xl relative overflow-hidden">
+          <div className="absolute inset-x-16 top-0 h-px bg-gradient-to-r from-transparent via-fuchsia-300 to-transparent shadow-[0_0_18px_rgba(217,70,239,0.75)]" aria-hidden="true" />
+          <div className="border-b border-white/20 pb-5 mb-6 sm:mb-8">
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center space-x-2.5 min-w-0 text-left">
-                <span className="w-9 h-9 rounded-xl bg-purple-500/20 border border-purple-400/25 inline-flex items-center justify-center shadow-[0_0_20px_rgba(168,85,247,0.14)] shrink-0">
+                <span className="w-10 h-10 rounded-xl bg-white/10 border border-fuchsia-300/30 inline-flex items-center justify-center shadow-[0_0_24px_rgba(217,70,239,0.2)] shrink-0">
                   <Activity className="w-4 h-4 text-fuchsia-300" aria-hidden="true" />
                 </span>
                 <span className="font-mono text-xs sm:text-sm text-zinc-100 font-bold tracking-[0.12em] leading-snug">
@@ -473,7 +473,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
 
             {!showResult && (
               <div
-                className="h-3 bg-black/40 border border-white/10 rounded-full overflow-hidden mt-5 p-[2px] shadow-inner"
+                className="h-3 bg-white/10 border border-white/20 rounded-full overflow-hidden mt-5 p-[2px] shadow-inner"
                 role="progressbar"
                 aria-label="Прогресс экспресс-теста"
                 aria-valuemin={1}
@@ -508,7 +508,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                 animate="center"
                 exit="exit"
                 transition={{ duration: animationDuration, ease: 'easeOut' }}
-                className="w-full text-left space-y-6 outline-none md:min-h-[510px]"
+                className="w-full text-left space-y-6 outline-none md:min-h-[560px]"
               >
                 {step === 1 && (
                   <div className="space-y-5" role="group" aria-labelledby="diagnostic-question-1">
@@ -523,7 +523,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                         </h3>
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-1">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 pt-1">
                       {INDUSTRIES.map((item) => {
                         const isSelected = industry === item.id;
 
@@ -536,8 +536,8 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                             whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
                             className={`group p-5 sm:p-6 rounded-xl text-left border text-sm sm:text-base leading-snug transition-all duration-200 cursor-pointer flex items-center justify-between gap-4 min-h-16 backdrop-blur-xl ${
                               isSelected
-                                ? 'bg-gradient-to-br from-purple-600/30 via-fuchsia-500/25 to-indigo-600/25 border-fuchsia-400/70 text-white font-extrabold shadow-[0_0_32px_rgba(217,70,239,0.18)] ring-1 ring-fuchsia-400/30'
-                                : 'bg-white/[0.035] border-white/10 text-zinc-100 font-semibold hover:bg-purple-500/10 hover:border-purple-400/40 hover:text-white hover:-translate-y-0.5 hover:shadow-[0_16px_38px_rgba(76,29,149,0.18)]'
+                                ? 'bg-gradient-to-br from-fuchsia-500/40 via-purple-500/30 to-indigo-500/30 border-fuchsia-300/80 text-white font-extrabold shadow-[0_0_38px_rgba(217,70,239,0.28)] ring-1 ring-fuchsia-300/40'
+                                : 'bg-white/[0.08] border-white/20 text-white font-semibold hover:bg-fuchsia-500/20 hover:border-fuchsia-300/50 hover:text-white hover:-translate-y-0.5 hover:shadow-[0_16px_42px_rgba(76,29,149,0.24)]'
                             }`}
                           >
                             <span className="min-w-0">{item.name}</span>
@@ -579,8 +579,8 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                             whileTap={shouldReduceMotion ? undefined : { scale: 0.995 }}
                             className={`group w-full p-5 sm:p-6 rounded-xl text-left border text-sm sm:text-base leading-snug transition-all duration-200 flex items-center justify-between gap-4 cursor-pointer min-h-16 backdrop-blur-xl ${
                               isSelected
-                                ? 'bg-gradient-to-br from-purple-600/30 via-fuchsia-500/25 to-indigo-600/25 border-fuchsia-400/70 text-white font-extrabold shadow-[0_0_32px_rgba(217,70,239,0.18)] ring-1 ring-fuchsia-400/30'
-                                : 'bg-white/[0.035] border-white/10 text-zinc-100 font-semibold hover:bg-purple-500/10 hover:border-purple-400/40 hover:text-white hover:-translate-y-0.5 hover:shadow-[0_16px_38px_rgba(76,29,149,0.18)]'
+                                ? 'bg-gradient-to-br from-fuchsia-500/40 via-purple-500/30 to-indigo-500/30 border-fuchsia-300/80 text-white font-extrabold shadow-[0_0_38px_rgba(217,70,239,0.28)] ring-1 ring-fuchsia-300/40'
+                                : 'bg-white/[0.08] border-white/20 text-white font-semibold hover:bg-fuchsia-500/20 hover:border-fuchsia-300/50 hover:text-white hover:-translate-y-0.5 hover:shadow-[0_16px_42px_rgba(76,29,149,0.24)]'
                             }`}
                           >
                             <span className="min-w-0">{item.name}</span>
@@ -620,7 +620,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                         </h3>
                       </div>
                     </div>
-                    <div className="space-y-3.5 pt-1">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 pt-1">
                       {SCALES.map((item) => {
                         const isSelected = scale === item.id;
 
@@ -633,8 +633,8 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                             whileTap={shouldReduceMotion ? undefined : { scale: 0.995 }}
                             className={`group w-full p-5 sm:p-6 rounded-xl text-left border text-sm sm:text-base leading-snug transition-all duration-200 flex items-center justify-between gap-4 cursor-pointer min-h-16 backdrop-blur-xl ${
                               isSelected
-                                ? 'bg-gradient-to-br from-purple-600/30 via-fuchsia-500/25 to-indigo-600/25 border-fuchsia-400/70 text-white font-extrabold shadow-[0_0_32px_rgba(217,70,239,0.18)] ring-1 ring-fuchsia-400/30'
-                                : 'bg-white/[0.035] border-white/10 text-zinc-100 font-semibold hover:bg-purple-500/10 hover:border-purple-400/40 hover:text-white hover:-translate-y-0.5 hover:shadow-[0_16px_38px_rgba(76,29,149,0.18)]'
+                                ? 'bg-gradient-to-br from-fuchsia-500/40 via-purple-500/30 to-indigo-500/30 border-fuchsia-300/80 text-white font-extrabold shadow-[0_0_38px_rgba(217,70,239,0.28)] ring-1 ring-fuchsia-300/40'
+                                : 'bg-white/[0.08] border-white/20 text-white font-semibold hover:bg-fuchsia-500/20 hover:border-fuchsia-300/50 hover:text-white hover:-translate-y-0.5 hover:shadow-[0_16px_42px_rgba(76,29,149,0.24)]'
                             }`}
                           >
                             <span className="min-w-0">{item.name}</span>
@@ -682,7 +682,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                 className="w-full text-left space-y-6 outline-none"
               >
                 <div
-                  className="relative overflow-hidden bg-gradient-to-br from-purple-950/90 via-zinc-950 to-fuchsia-950/70 p-6 sm:p-8 border border-fuchsia-400/20 rounded-2xl shadow-[0_24px_80px_rgba(0,0,0,0.45),0_0_44px_rgba(217,70,239,0.12)] backdrop-blur-xl"
+                  className="relative overflow-hidden bg-gradient-to-br from-white/10 via-purple-500/20 to-fuchsia-500/20 p-6 sm:p-8 border border-fuchsia-300/40 rounded-2xl shadow-[0_24px_70px_rgba(40,22,88,0.32),0_0_48px_rgba(217,70,239,0.2)] backdrop-blur-2xl"
                   aria-live="polite"
                 >
                   <div className="absolute -right-12 -top-16 w-52 h-52 rounded-full bg-fuchsia-500/25 blur-3xl pointer-events-none" aria-hidden="true" />
@@ -712,7 +712,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
-                  <div className="relative overflow-hidden lg:col-span-3 border border-purple-400/20 bg-gradient-to-br from-purple-500/10 via-white/[0.035] to-fuchsia-500/10 rounded-2xl p-6 sm:p-8 space-y-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl">
+                  <div className="relative overflow-hidden lg:col-span-3 border border-fuchsia-300/30 bg-gradient-to-br from-white/10 via-purple-500/20 to-fuchsia-500/20 rounded-2xl p-6 sm:p-8 space-y-6 shadow-[0_22px_64px_rgba(42,24,94,0.3),0_0_34px_rgba(217,70,239,0.12)] backdrop-blur-2xl">
                     <div className="absolute -right-20 -bottom-24 w-56 h-56 rounded-full bg-purple-600/20 blur-3xl pointer-events-none" aria-hidden="true" />
                     <span className="relative font-mono text-[11px] sm:text-xs text-fuchsia-100 uppercase tracking-[0.18em] block font-black">
                       ОСНОВНОЙ АРХЕТИП КОМПАНИИ
@@ -728,7 +728,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                     <p className="relative font-sans text-sm sm:text-base text-zinc-300 leading-relaxed max-w-2xl">
                       {reportDetails.primary.description}
                     </p>
-                    <div className="relative bg-black/25 border border-white/10 p-4 sm:p-5 rounded-xl shadow-inner">
+                    <div className="relative bg-white/[0.07] border border-white/20 p-4 sm:p-5 rounded-xl shadow-inner backdrop-blur-xl">
                       <span className="font-mono text-[11px] sm:text-xs text-fuchsia-100 uppercase tracking-[0.16em] block font-black mb-2">
                         ЗОНА ВНИМАНИЯ
                       </span>
@@ -738,7 +738,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                     </div>
                   </div>
 
-                  <div className="relative overflow-hidden lg:col-span-2 bg-gradient-to-br from-zinc-950 via-purple-950/70 to-zinc-950 border border-fuchsia-400/20 rounded-2xl p-6 sm:p-8 flex flex-col justify-between gap-8 shadow-[0_20px_60px_rgba(0,0,0,0.32),0_0_34px_rgba(168,85,247,0.1)]">
+                  <div className="relative overflow-hidden lg:col-span-2 bg-gradient-to-br from-white/10 via-indigo-500/20 to-fuchsia-500/20 border border-fuchsia-300/40 rounded-2xl p-6 sm:p-8 flex flex-col justify-between gap-8 shadow-[0_22px_64px_rgba(42,24,94,0.32),0_0_38px_rgba(168,85,247,0.18)] backdrop-blur-2xl">
                     <div className="absolute -right-16 -top-16 w-44 h-44 rounded-full bg-fuchsia-500/20 blur-3xl pointer-events-none" aria-hidden="true" />
                     <div>
                       <span className="relative font-mono text-[11px] sm:text-xs text-fuchsia-100 uppercase tracking-[0.18em] block font-black mb-4">
@@ -752,7 +752,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                       </div>
                     </div>
                     <div className="relative">
-                      <div className="h-3.5 bg-black/40 border border-white/10 rounded-full overflow-hidden p-[2px]">
+                      <div className="h-3.5 bg-white/10 border border-white/20 rounded-full overflow-hidden p-[2px]">
                         <motion.div
                           className="h-full bg-gradient-to-r from-purple-400 via-purple-500 to-indigo-500 rounded-full"
                           initial={{ width: shouldReduceMotion ? `${reportDetails.manageability}%` : 0 }}
@@ -774,7 +774,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                     </span>
                     <div className="space-y-2">
                       {reportDetails.related.map((archetype) => (
-                        <div key={archetype.id} className="bg-white/[0.04] border border-white/10 rounded-xl p-4 shadow-lg backdrop-blur-xl hover:bg-purple-500/10 hover:border-purple-400/25 transition-colors">
+                        <div key={archetype.id} className="bg-white/[0.08] border border-white/20 rounded-xl p-4 shadow-[0_12px_34px_rgba(31,18,71,0.2)] backdrop-blur-xl hover:bg-fuchsia-500/20 hover:border-fuchsia-300/40 transition-colors">
                           <div className="flex items-center justify-between gap-3 mb-2">
                             <span className="font-sans text-sm sm:text-base font-extrabold text-white">
                               {archetype.name}
@@ -783,7 +783,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                               {archetype.match}%
                             </span>
                           </div>
-                          <div className="h-1.5 bg-black/40 border border-white/10 rounded-full overflow-hidden">
+                          <div className="h-1.5 bg-white/10 border border-white/20 rounded-full overflow-hidden">
                             <motion.div
                               className="h-full bg-gradient-to-r from-purple-500 to-fuchsia-500 rounded-full shadow-[0_0_12px_rgba(217,70,239,0.4)]"
                               initial={{ width: shouldReduceMotion ? `${archetype.match}%` : 0 }}
@@ -802,14 +802,14 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                     </span>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                       {reportDetails.dimensions.map((dimension) => (
-                        <div key={dimension.id} className="relative overflow-hidden bg-gradient-to-br from-purple-500/10 to-white/[0.035] border border-purple-400/20 rounded-xl p-4 shadow-lg backdrop-blur-xl">
+                        <div key={dimension.id} className="relative overflow-hidden bg-gradient-to-br from-white/10 to-fuchsia-500/20 border border-fuchsia-300/25 rounded-xl p-4 shadow-[0_12px_34px_rgba(31,18,71,0.2)] backdrop-blur-xl">
                           <div className="flex items-center justify-between gap-3 mb-2">
                             <span className="font-sans text-sm sm:text-base font-extrabold text-white">{dimension.label}</span>
                             <span className="font-mono text-xl font-black text-fuchsia-200">
                               {dimension.value}
                             </span>
                           </div>
-                          <div className="h-1.5 bg-black/40 border border-white/10 rounded-full overflow-hidden">
+                          <div className="h-1.5 bg-white/10 border border-white/20 rounded-full overflow-hidden">
                             <motion.div
                               className="h-full bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full"
                               initial={{ width: shouldReduceMotion ? `${dimension.value}%` : 0 }}
@@ -823,11 +823,11 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                   </div>
                 </div>
 
-                <p className="font-sans text-sm text-zinc-300 leading-relaxed bg-white/[0.035] border border-white/10 border-l-2 border-l-fuchsia-500 px-4 py-3 rounded-xl backdrop-blur-xl">
+                <p className="font-sans text-sm text-zinc-200 leading-relaxed bg-white/[0.08] border border-white/20 border-l-2 border-l-fuchsia-300 px-4 py-3 rounded-xl shadow-sm backdrop-blur-xl">
                   Это ориентировочное наблюдение по вашим ответам, а не полноценная диагностика или экспертное заключение.
                 </p>
 
-                <div className="relative overflow-hidden bg-gradient-to-r from-purple-700 via-fuchsia-700 to-indigo-700 border border-fuchsia-300/30 rounded-2xl p-6 sm:p-7 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-5 shadow-[0_18px_60px_rgba(88,28,135,0.4),0_0_42px_rgba(217,70,239,0.18)]">
+                <div className="relative overflow-hidden bg-gradient-to-r from-fuchsia-600 via-purple-600 to-indigo-600 border border-fuchsia-200/50 rounded-2xl p-6 sm:p-7 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-5 shadow-[0_22px_70px_rgba(126,34,206,0.36),0_0_52px_rgba(217,70,239,0.26)]">
                   <div className="absolute -right-10 -bottom-16 w-48 h-48 rounded-full bg-white/20 blur-2xl pointer-events-none" aria-hidden="true" />
                   <div className="space-y-1 text-left w-full">
                     <span className="font-mono text-[11px] sm:text-xs text-fuchsia-50 uppercase tracking-[0.18em] block font-black">
