@@ -876,6 +876,5 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
       </div>
       </div>
 </section>
-    </section>
   );
 }
