@@ -323,11 +323,13 @@ const transitionVariants = {
   enter: (direction: number) => ({
     opacity: 0,
     x: direction === 0 ? 0 : direction > 0 ? 14 : -14,
+    scale: direction === 0 ? 1 : 0.985,
   }),
-  center: { opacity: 1, x: 0 },
+  center: { opacity: 1, x: 0, scale: 1 },
   exit: (direction: number) => ({
     opacity: 0,
     x: direction === 0 ? 0 : direction > 0 ? -14 : 14,
+    scale: direction === 0 ? 1 : 0.99,
   }),
 };
 
@@ -450,7 +452,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto bg-white/[0.045] p-4 sm:p-7 md:p-10 rounded-2xl border border-white/10 shadow-[0_32px_100px_rgba(0,0,0,0.55),0_0_60px_rgba(126,34,206,0.08)] backdrop-blur-2xl relative overflow-hidden">
+        <div className="max-w-5xl mx-auto bg-white/[0.045] p-4 sm:p-7 md:p-10 rounded-[28px] border border-white/10 shadow-[0_32px_100px_rgba(0,0,0,0.55),0_0_60px_rgba(126,34,206,0.08)] backdrop-blur-2xl relative overflow-hidden">
           <div className="absolute inset-x-16 top-0 h-px bg-gradient-to-r from-transparent via-fuchsia-400/70 to-transparent" aria-hidden="true" />
           <div className="border-b border-white/10 pb-5 mb-6 sm:mb-8">
             <div className="flex items-center justify-between gap-3">
@@ -483,7 +485,12 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                   animate={{ width: `${(step / 3) * 100}%` }}
                   transition={{ duration: shouldReduceMotion ? 0 : 0.2, ease: 'easeOut' }}
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse" aria-hidden="true" />
+                  <motion.span
+                    className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                    animate={shouldReduceMotion ? { x: '0%' } : { x: ['-120%', '240%'] }}
+                    transition={{ duration: shouldReduceMotion ? 0 : 1.8, repeat: shouldReduceMotion ? 0 : Infinity, ease: 'linear' }}
+                    aria-hidden="true"
+                  />
                 </motion.div>
               </div>
             )}
@@ -505,9 +512,17 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
               >
                 {step === 1 && (
                   <div className="space-y-5" role="group" aria-labelledby="diagnostic-question-1">
-                    <h3 id="diagnostic-question-1" className="font-sans text-xl sm:text-2xl font-black text-white tracking-tight leading-snug">
-                      1. В какой отрасли работает ваша компания?
-                    </h3>
+                    <div className="flex items-start gap-4 sm:gap-5">
+                      <span className="font-mono text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-fuchsia-300 to-purple-500 leading-none shrink-0 drop-shadow-[0_0_18px_rgba(217,70,239,0.2)]">
+                        01
+                      </span>
+                      <div className="space-y-1">
+                        <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-[0.18em] font-bold">Вопрос 1 из 3</span>
+                        <h3 id="diagnostic-question-1" className="font-sans text-xl sm:text-2xl font-black text-white tracking-tight leading-snug">
+                          В какой отрасли работает ваша компания?
+                        </h3>
+                      </div>
+                    </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-1">
                       {INDUSTRIES.map((item) => {
                         const isSelected = industry === item.id;
@@ -540,9 +555,17 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
 
                 {step === 2 && (
                   <div className="space-y-5" role="group" aria-labelledby="diagnostic-question-2">
-                    <h3 id="diagnostic-question-2" className="font-sans text-xl sm:text-2xl font-black text-white tracking-tight leading-snug">
-                      2. Что на сегодняшний день сильнее всего мешает развитию компании?
-                    </h3>
+                    <div className="flex items-start gap-4 sm:gap-5">
+                      <span className="font-mono text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-fuchsia-300 to-purple-500 leading-none shrink-0 drop-shadow-[0_0_18px_rgba(217,70,239,0.2)]">
+                        02
+                      </span>
+                      <div className="space-y-1">
+                        <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-[0.18em] font-bold">Вопрос 2 из 3</span>
+                        <h3 id="diagnostic-question-2" className="font-sans text-xl sm:text-2xl font-black text-white tracking-tight leading-snug">
+                          Что на сегодняшний день сильнее всего мешает развитию компании?
+                        </h3>
+                      </div>
+                    </div>
                     <div className="space-y-3.5 pt-1">
                       {BOTTLENECKS.map((item) => {
                         const isSelected = bottleneck === item.id;
@@ -586,9 +609,17 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
 
                 {step === 3 && (
                   <div className="space-y-5" role="group" aria-labelledby="diagnostic-question-3">
-                    <h3 id="diagnostic-question-3" className="font-sans text-xl sm:text-2xl font-black text-white tracking-tight leading-snug">
-                      3. Каков текущий масштаб организации?
-                    </h3>
+                    <div className="flex items-start gap-4 sm:gap-5">
+                      <span className="font-mono text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-fuchsia-300 to-purple-500 leading-none shrink-0 drop-shadow-[0_0_18px_rgba(217,70,239,0.2)]">
+                        03
+                      </span>
+                      <div className="space-y-1">
+                        <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-[0.18em] font-bold">Вопрос 3 из 3</span>
+                        <h3 id="diagnostic-question-3" className="font-sans text-xl sm:text-2xl font-black text-white tracking-tight leading-snug">
+                          Каков текущий масштаб организации?
+                        </h3>
+                      </div>
+                    </div>
                     <div className="space-y-3.5 pt-1">
                       {SCALES.map((item) => {
                         const isSelected = scale === item.id;
