@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
-import { Activity, ArrowRight, Building2, Check, Cog, Crane, Factory, Sparkles, Truck } from 'lucide-react';
+import { Activity, ArrowRight, Building2, Check, Cog, Factory, Sparkles, Truck } from 'lucide-react';
 
 interface DiagnosticWidgetProps {
   onDiagnosticComplete: (summary: string) => void;
@@ -598,7 +598,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                         const isSelected = industry === item.id;
                         const IndustryIcon =
                           item.id === 'construction'
-                            ? Crane
+                            ? Building2
                             : item.id === 'logistics'
                               ? Truck
                               : item.id === 'manufacturing'
