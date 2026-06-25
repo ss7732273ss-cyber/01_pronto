@@ -439,16 +439,16 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.45fr_1fr] gap-7 lg:gap-10 items-center mb-9 sm:mb-11">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.45fr_1fr] gap-6 lg:gap-8 items-center mb-12 sm:mb-16">
           <div className="text-center lg:text-left space-y-6">
             <span className="font-mono text-xs font-black text-fuchsia-600 bg-white/75 border border-fuchsia-200/80 px-4 py-2 rounded-full uppercase tracking-[0.18em] inline-flex items-center shadow-[0_10px_35px_rgba(217,70,239,0.12)] backdrop-blur-xl">
               БИЗНЕС-ДИАГНОСТИКА ОНЛАЙН
             </span>
             <div className="space-y-4">
-              <h2 className="font-sans text-4xl sm:text-6xl lg:text-7xl font-black text-[#21164E] tracking-[-0.055em] leading-[0.98]">
+              <h2 className="font-sans text-3xl sm:text-4xl font-black text-[#21164E] tracking-tight leading-tight">
                 Экспресс-тест структуры вашей компании
               </h2>
-              <p className="font-sans text-[#4B4668] text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto lg:mx-0">
+              <p className="font-sans text-[#4B4668] text-sm sm:text-base leading-relaxed max-w-3xl mx-auto lg:mx-0">
                 Ответьте на три вопроса и получите ориентировочный профиль компании: её архетип,
                 уровень управляемости и основные зоны внимания.
               </p>
@@ -459,7 +459,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                 <span className="w-10 h-10 rounded-xl bg-fuchsia-100 text-fuchsia-600 inline-flex items-center justify-center shadow-[0_0_22px_rgba(217,70,239,0.22)] shrink-0">
                   <Sparkles className="w-5 h-5" aria-hidden="true" />
                 </span>
-                <span className="font-sans text-sm sm:text-base text-[#21164E] font-extrabold leading-tight">
+                <span className="font-sans text-xs sm:text-sm text-[#21164E] font-extrabold leading-tight">
                   3 простых вопроса<br />5 минут
                 </span>
               </div>
@@ -467,7 +467,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                 <span className="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 inline-flex items-center justify-center shadow-[0_0_22px_rgba(124,58,237,0.2)] shrink-0">
                   <Activity className="w-5 h-5" aria-hidden="true" />
                 </span>
-                <span className="font-sans text-sm sm:text-base text-[#21164E] font-extrabold leading-tight">
+                <span className="font-sans text-xs sm:text-sm text-[#21164E] font-extrabold leading-tight">
                   Ориентировочный<br />профиль компании
                 </span>
               </div>
@@ -475,7 +475,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                 <span className="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 inline-flex items-center justify-center shadow-[0_0_22px_rgba(99,102,241,0.18)] shrink-0">
                   <Check className="w-5 h-5" aria-hidden="true" />
                 </span>
-                <span className="font-sans text-sm sm:text-base text-[#21164E] font-extrabold leading-tight">
+                <span className="font-sans text-xs sm:text-sm text-[#21164E] font-extrabold leading-tight">
                   Уровень управляемости<br />и зрелости
                 </span>
               </div>
@@ -483,7 +483,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                 <span className="w-10 h-10 rounded-xl bg-fuchsia-100 text-fuchsia-600 inline-flex items-center justify-center shadow-[0_0_22px_rgba(217,70,239,0.22)] shrink-0">
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </span>
-                <span className="font-sans text-sm sm:text-base text-[#21164E] font-extrabold leading-tight">
+                <span className="font-sans text-xs sm:text-sm text-[#21164E] font-extrabold leading-tight">
                   Зоны внимания<br />и рекомендации
                 </span>
               </div>
@@ -519,7 +519,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
           </div>
         </div>
 
-        <div className="w-full max-w-6xl mx-auto bg-[radial-gradient(circle_at_92%_22%,rgba(217,70,239,0.34),transparent_24%),radial-gradient(circle_at_8%_90%,rgba(236,72,153,0.22),transparent_25%),linear-gradient(135deg,rgba(43,32,102,0.97),rgba(24,34,83,0.96)_52%,rgba(75,24,110,0.96))] p-5 sm:p-8 md:p-11 rounded-[34px] border border-fuchsia-300/60 ring-[10px] ring-white/85 shadow-[0_36px_105px_rgba(64,35,105,0.28),0_0_70px_rgba(217,70,239,0.22),inset_0_1px_0_rgba(255,255,255,0.22)] backdrop-blur-3xl relative overflow-hidden">
+        <div className="w-full max-w-4xl mx-auto bg-[radial-gradient(circle_at_92%_22%,rgba(217,70,239,0.34),transparent_24%),radial-gradient(circle_at_8%_90%,rgba(236,72,153,0.22),transparent_25%),linear-gradient(135deg,rgba(43,32,102,0.97),rgba(24,34,83,0.96)_52%,rgba(75,24,110,0.96))] p-6 md:p-10 rounded-[34px] border border-fuchsia-300/60 ring-[10px] ring-white/85 shadow-[0_36px_105px_rgba(64,35,105,0.28),0_0_70px_rgba(217,70,239,0.22),inset_0_1px_0_rgba(255,255,255,0.22)] backdrop-blur-3xl relative overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.14),transparent_22%,rgba(255,255,255,0.05)_62%,transparent)] pointer-events-none" aria-hidden="true" />
           <div className="absolute -right-28 -top-28 w-72 h-72 rounded-full bg-fuchsia-400/20 blur-3xl pointer-events-none" aria-hidden="true" />
           <div className="absolute -left-28 bottom-8 w-72 h-72 rounded-full bg-indigo-400/20 blur-3xl pointer-events-none" aria-hidden="true" />
@@ -530,7 +530,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                 <span className="w-12 h-12 rounded-2xl bg-white/10 border border-fuchsia-200/40 inline-flex items-center justify-center shadow-[0_0_30px_rgba(217,70,239,0.28),inset_0_1px_0_rgba(255,255,255,0.22)] shrink-0">
                   <Activity className="w-5 h-5 text-fuchsia-200" aria-hidden="true" />
                 </span>
-                <span className="font-mono text-sm sm:text-base text-white font-black tracking-[0.14em] leading-snug">
+                <span className="font-mono text-xs text-white font-black tracking-[0.14em] leading-snug">
                   МОДУЛЬ ЭКСПРЕСС-АНАЛИЗА БИЗНЕСА
                 </span>
               </div>
@@ -578,17 +578,17 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                 animate="center"
                 exit="exit"
                 transition={{ duration: animationDuration, ease: 'easeOut' }}
-                className="relative z-10 w-full text-left space-y-7 outline-none md:min-h-[600px]"
+                className="relative z-10 w-full text-left space-y-6 outline-none"
               >
                 {step === 1 && (
-                  <div className="space-y-7" role="group" aria-labelledby="diagnostic-question-1">
+                  <div className="space-y-4" role="group" aria-labelledby="diagnostic-question-1">
                     <div className="flex items-start gap-5 sm:gap-7">
-                      <span className="font-mono text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#ff70d5] to-[#9f7aff] leading-none shrink-0 drop-shadow-[0_0_24px_rgba(217,70,239,0.34)]">
+                      <span className="font-mono text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#ff70d5] to-[#9f7aff] leading-none shrink-0 drop-shadow-[0_0_24px_rgba(217,70,239,0.34)]">
                         01
                       </span>
                       <div className="space-y-1.5 pt-1">
                         <span className="font-mono text-xs sm:text-sm text-fuchsia-200/80 uppercase tracking-[0.18em] font-black">Вопрос 1 из 3</span>
-                        <h3 id="diagnostic-question-1" className="font-sans text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-[-0.035em] leading-tight drop-shadow-[0_4px_18px_rgba(0,0,0,0.18)]">
+                        <h3 id="diagnostic-question-1" className="font-sans text-lg font-black text-white tracking-tight leading-snug drop-shadow-[0_4px_18px_rgba(0,0,0,0.18)]">
                           В какой отрасли работает ваша компания?
                         </h3>
                       </div>
@@ -614,19 +614,19 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                             onClick={() => selectIndustry(item.id)}
                             aria-pressed={isSelected}
                             whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
-                            className={`group relative overflow-hidden p-5 sm:p-6 rounded-2xl text-left border text-base sm:text-lg leading-snug transition-all duration-200 cursor-pointer flex items-center justify-between gap-5 min-h-[104px] backdrop-blur-2xl ${
+                            className={`group relative overflow-hidden p-4 rounded-2xl text-left border text-xs leading-snug transition-all duration-200 cursor-pointer flex items-center justify-between gap-4 min-h-16 backdrop-blur-2xl ${
                               isSelected
                                 ? 'bg-gradient-to-br from-fuchsia-500/50 via-purple-600/40 to-indigo-500/30 border-fuchsia-200/90 text-white font-black shadow-[0_0_44px_rgba(217,70,239,0.38),inset_0_1px_0_rgba(255,255,255,0.25)] ring-1 ring-fuchsia-200/60'
                                 : 'bg-white/10 border-white/25 text-white font-extrabold shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] hover:bg-fuchsia-500/20 hover:border-fuchsia-200/60 hover:text-white hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(76,29,149,0.28),0_0_28px_rgba(217,70,239,0.18)]'
                             }`}
                           >
                             <span className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
-                            <span className={`relative w-14 h-14 rounded-2xl border inline-flex items-center justify-center shrink-0 transition-all duration-200 ${
+                            <span className={`relative w-10 h-10 rounded-2xl border inline-flex items-center justify-center shrink-0 transition-all duration-200 ${
                               isSelected
                                 ? 'bg-white/20 border-white/30 text-white shadow-[0_0_30px_rgba(255,255,255,0.18)]'
                                 : 'bg-white/10 border-white/20 text-fuchsia-200 group-hover:text-white group-hover:border-fuchsia-200/40'
                             }`}>
-                              <IndustryIcon className="w-7 h-7" aria-hidden="true" />
+                              <IndustryIcon className="w-5 h-5" aria-hidden="true" />
                             </span>
                             <span className="relative min-w-0">{item.name}</span>
                             {isSelected && (
@@ -642,19 +642,19 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                 )}
 
                 {step === 2 && (
-                  <div className="space-y-7" role="group" aria-labelledby="diagnostic-question-2">
+                  <div className="space-y-4" role="group" aria-labelledby="diagnostic-question-2">
                     <div className="flex items-start gap-5 sm:gap-7">
-                      <span className="font-mono text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#ff70d5] to-[#9f7aff] leading-none shrink-0 drop-shadow-[0_0_24px_rgba(217,70,239,0.34)]">
+                      <span className="font-mono text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#ff70d5] to-[#9f7aff] leading-none shrink-0 drop-shadow-[0_0_24px_rgba(217,70,239,0.34)]">
                         02
                       </span>
                       <div className="space-y-1.5 pt-1">
                         <span className="font-mono text-xs sm:text-sm text-fuchsia-200/80 uppercase tracking-[0.18em] font-black">Вопрос 2 из 3</span>
-                        <h3 id="diagnostic-question-2" className="font-sans text-2xl sm:text-3xl font-black text-white tracking-[-0.035em] leading-tight drop-shadow-[0_4px_18px_rgba(0,0,0,0.18)]">
+                        <h3 id="diagnostic-question-2" className="font-sans text-lg font-black text-white tracking-tight leading-snug drop-shadow-[0_4px_18px_rgba(0,0,0,0.18)]">
                           Что на сегодняшний день сильнее всего мешает развитию компании?
                         </h3>
                       </div>
                     </div>
-                    <div className="space-y-4 pt-1">
+                    <div className="space-y-3 pt-2">
                       {BOTTLENECKS.map((item) => {
                         const isSelected = bottleneck === item.id;
 
@@ -665,7 +665,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                             onClick={() => selectBottleneck(item.id)}
                             aria-pressed={isSelected}
                             whileTap={shouldReduceMotion ? undefined : { scale: 0.995 }}
-                            className={`group relative overflow-hidden w-full p-5 sm:p-6 rounded-2xl text-left border text-base sm:text-lg leading-snug transition-all duration-200 flex items-center justify-between gap-4 cursor-pointer min-h-[78px] backdrop-blur-2xl ${
+                            className={`group relative overflow-hidden w-full p-4 rounded-2xl text-left border text-xs sm:text-sm leading-snug transition-all duration-200 flex items-center justify-between gap-4 cursor-pointer min-h-16 backdrop-blur-2xl ${
                               isSelected
                                 ? 'bg-gradient-to-r from-fuchsia-500/40 via-purple-600/30 to-indigo-500/25 border-fuchsia-200/80 text-white font-black shadow-[0_0_42px_rgba(217,70,239,0.32),inset_0_1px_0_rgba(255,255,255,0.24)] ring-1 ring-fuchsia-200/50'
                                 : 'bg-white/10 border-white/25 text-white font-extrabold shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] hover:bg-fuchsia-500/20 hover:border-fuchsia-200/60 hover:text-white hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(76,29,149,0.26),0_0_24px_rgba(217,70,239,0.16)]'
@@ -697,19 +697,19 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                 )}
 
                 {step === 3 && (
-                  <div className="space-y-7" role="group" aria-labelledby="diagnostic-question-3">
+                  <div className="space-y-4" role="group" aria-labelledby="diagnostic-question-3">
                     <div className="flex items-start gap-5 sm:gap-7">
-                      <span className="font-mono text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#ff70d5] to-[#9f7aff] leading-none shrink-0 drop-shadow-[0_0_24px_rgba(217,70,239,0.34)]">
+                      <span className="font-mono text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#ff70d5] to-[#9f7aff] leading-none shrink-0 drop-shadow-[0_0_24px_rgba(217,70,239,0.34)]">
                         03
                       </span>
                       <div className="space-y-1.5 pt-1">
                         <span className="font-mono text-xs sm:text-sm text-fuchsia-200/80 uppercase tracking-[0.18em] font-black">Вопрос 3 из 3</span>
-                        <h3 id="diagnostic-question-3" className="font-sans text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-[-0.035em] leading-tight drop-shadow-[0_4px_18px_rgba(0,0,0,0.18)]">
+                        <h3 id="diagnostic-question-3" className="font-sans text-lg font-black text-white tracking-tight leading-snug drop-shadow-[0_4px_18px_rgba(0,0,0,0.18)]">
                           Каков текущий масштаб организации?
                         </h3>
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
+                    <div className="space-y-3 pt-2">
                       {SCALES.map((item) => {
                         const isSelected = scale === item.id;
 
@@ -720,7 +720,7 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                             onClick={() => setScale(item.id)}
                             aria-pressed={isSelected}
                             whileTap={shouldReduceMotion ? undefined : { scale: 0.995 }}
-                            className={`group relative overflow-hidden w-full p-5 sm:p-6 rounded-2xl text-left border text-base sm:text-lg leading-snug transition-all duration-200 flex items-center justify-between gap-4 cursor-pointer min-h-[110px] backdrop-blur-2xl ${
+                            className={`group relative overflow-hidden w-full p-4 rounded-2xl text-left border text-xs sm:text-sm leading-snug transition-all duration-200 flex items-center justify-between gap-4 cursor-pointer min-h-16 backdrop-blur-2xl ${
                               isSelected
                                 ? 'bg-gradient-to-br from-fuchsia-500/50 via-purple-600/40 to-indigo-500/30 border-fuchsia-200/80 text-white font-black shadow-[0_0_42px_rgba(217,70,239,0.34),inset_0_1px_0_rgba(255,255,255,0.24)] ring-1 ring-fuchsia-200/50'
                                 : 'bg-white/10 border-white/25 text-white font-extrabold shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] hover:bg-fuchsia-500/20 hover:border-fuchsia-200/60 hover:text-white hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(76,29,149,0.26),0_0_24px_rgba(217,70,239,0.16)]'
@@ -791,10 +791,10 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                       <span className="font-mono text-xs sm:text-sm text-fuchsia-100 uppercase tracking-[0.2em] block font-black mb-3">
                         РЕЗУЛЬТАТ ЭКСПРЕСС-ТЕСТА
                       </span>
-                      <h4 className="font-sans font-black text-white text-3xl sm:text-5xl tracking-[-0.055em] leading-none mb-4 drop-shadow-[0_8px_28px_rgba(0,0,0,0.22)]">
+                      <h4 className="font-sans font-black text-white text-base sm:text-xl tracking-tight leading-none mb-2 drop-shadow-[0_8px_28px_rgba(0,0,0,0.22)]">
                         Ваш профиль управляемости готов
                       </h4>
-                      <p className="font-sans text-base sm:text-lg text-purple-50/90 leading-relaxed max-w-3xl">
+                      <p className="font-sans text-xs sm:text-sm text-purple-50/90 leading-relaxed max-w-3xl">
                         Наиболее близкие управленческие паттерны по трём вашим ответам.
                       </p>
                     </div>
@@ -802,40 +802,40 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-                  <div className="relative overflow-hidden lg:col-span-3 border border-fuchsia-200/40 bg-[radial-gradient(circle_at_92%_92%,rgba(217,70,239,0.25),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.12),rgba(124,58,237,0.18),rgba(236,72,153,0.18))] rounded-[28px] p-7 sm:p-9 space-y-7 shadow-[0_26px_72px_rgba(42,24,94,0.32),0_0_38px_rgba(217,70,239,0.16),inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-2xl">
+                  <div className="relative overflow-hidden lg:col-span-3 border border-fuchsia-200/40 bg-[radial-gradient(circle_at_92%_92%,rgba(217,70,239,0.25),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.12),rgba(124,58,237,0.18),rgba(236,72,153,0.18))] rounded-[28px] p-5 sm:p-6 space-y-4 shadow-[0_26px_72px_rgba(42,24,94,0.32),0_0_38px_rgba(217,70,239,0.16),inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-2xl">
                     <div className="absolute -right-20 -bottom-24 w-56 h-56 rounded-full bg-purple-600/20 blur-3xl pointer-events-none" aria-hidden="true" />
                     <span className="relative font-mono text-xs sm:text-sm text-fuchsia-100 uppercase tracking-[0.2em] block font-black">
                       ОСНОВНОЙ АРХЕТИП КОМПАНИИ
                     </span>
                     <div className="relative flex flex-wrap items-end justify-between gap-4">
-                      <h4 className="font-sans text-4xl sm:text-5xl font-black text-white tracking-[-0.055em] leading-none">
+                      <h4 className="font-sans text-xl sm:text-2xl font-black text-white tracking-tight leading-none">
                         {reportDetails.primary.name}
                       </h4>
-                      <span className="font-mono text-2xl sm:text-3xl font-black text-white bg-gradient-to-r from-fuchsia-500 via-purple-600 to-indigo-500 border border-fuchsia-200/50 px-5 py-3 rounded-2xl whitespace-nowrap shadow-[0_0_34px_rgba(217,70,239,0.34)]">
+                      <span className="font-mono text-base sm:text-lg font-black text-white bg-gradient-to-r from-fuchsia-500 via-purple-600 to-indigo-500 border border-fuchsia-200/50 px-4 py-2 rounded-2xl whitespace-nowrap shadow-[0_0_34px_rgba(217,70,239,0.34)]">
                         {reportDetails.primary.match}% совпадения
                       </span>
                     </div>
-                    <p className="relative font-sans text-base sm:text-lg text-purple-50/90 leading-relaxed max-w-2xl">
+                    <p className="relative font-sans text-xs sm:text-sm text-purple-50/90 leading-relaxed max-w-2xl">
                       {reportDetails.primary.description}
                     </p>
                     <div className="relative bg-white/10 border border-white/25 p-5 sm:p-6 rounded-2xl shadow-[inset_0_1px_14px_rgba(255,255,255,0.08)] backdrop-blur-xl">
                       <span className="font-mono text-xs sm:text-sm text-fuchsia-100 uppercase tracking-[0.18em] block font-black mb-3">
                         ЗОНА ВНИМАНИЯ
                       </span>
-                      <p className="font-sans text-base text-white leading-relaxed">
+                      <p className="font-sans text-xs sm:text-sm text-white leading-relaxed">
                         {reportDetails.primary.focus}
                       </p>
                     </div>
                   </div>
 
-                  <div className="relative overflow-hidden lg:col-span-2 bg-[radial-gradient(circle_at_70%_8%,rgba(217,70,239,0.32),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.12),rgba(79,70,229,0.22),rgba(168,85,247,0.18))] border border-fuchsia-200/50 rounded-[28px] p-7 sm:p-9 flex flex-col justify-between gap-9 shadow-[0_26px_72px_rgba(42,24,94,0.34),0_0_44px_rgba(168,85,247,0.22),inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-2xl">
+                  <div className="relative overflow-hidden lg:col-span-2 bg-[radial-gradient(circle_at_70%_8%,rgba(217,70,239,0.32),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.12),rgba(79,70,229,0.22),rgba(168,85,247,0.18))] border border-fuchsia-200/50 rounded-[28px] p-5 sm:p-6 flex flex-col justify-between gap-6 shadow-[0_26px_72px_rgba(42,24,94,0.34),0_0_44px_rgba(168,85,247,0.22),inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-2xl">
                     <div className="absolute -right-16 -top-16 w-52 h-52 rounded-full bg-fuchsia-500/25 blur-3xl pointer-events-none" aria-hidden="true" />
                     <div>
                       <span className="relative font-mono text-xs sm:text-sm text-fuchsia-100 uppercase tracking-[0.2em] block font-black mb-5">
                         УПРАВЛЯЕМОСТЬ БИЗНЕСА
                       </span>
                       <div className="relative flex items-end gap-2">
-                        <span className="font-sans text-8xl sm:text-9xl font-black text-white tracking-[-0.08em] leading-none drop-shadow-[0_0_30px_rgba(217,70,239,0.3)]">
+                        <span className="font-sans text-5xl sm:text-6xl font-black text-white tracking-[-0.08em] leading-none drop-shadow-[0_0_30px_rgba(217,70,239,0.3)]">
                           {reportDetails.manageability}
                         </span>
                         <span className="font-mono text-base text-fuchsia-100 font-black pb-3">/ 100</span>
@@ -955,14 +955,14 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
           </AnimatePresence>
         </div>
 
-        <div className="w-full max-w-6xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="w-full max-w-4xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-3 gap-5">
           <div className="flex items-center gap-5 rounded-[24px] bg-white/70 border border-white/80 px-6 py-6 shadow-[0_22px_60px_rgba(126,34,206,0.12)] backdrop-blur-2xl">
             <span className="w-14 h-14 rounded-2xl bg-fuchsia-50 text-fuchsia-600 inline-flex items-center justify-center shadow-[0_0_28px_rgba(217,70,239,0.18)] shrink-0">
               <Sparkles className="w-7 h-7" aria-hidden="true" />
             </span>
             <span className="text-left">
-              <span className="font-sans text-lg font-black text-[#21164E] leading-tight block">Точно по сути</span>
-              <span className="font-sans text-base text-[#514B6F] leading-relaxed block mt-1">
+              <span className="font-sans text-sm font-black text-[#21164E] leading-tight block">Точно по сути</span>
+              <span className="font-sans text-xs text-[#514B6F] leading-relaxed block mt-1">
                 Без воды и абстракций. Только важные показатели управляемости компании.
               </span>
             </span>
@@ -973,8 +973,8 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
               <Activity className="w-7 h-7" aria-hidden="true" />
             </span>
             <span className="text-left">
-              <span className="font-sans text-lg font-black text-[#21164E] leading-tight block">На основе практики</span>
-              <span className="font-sans text-base text-[#514B6F] leading-relaxed block mt-1">
+              <span className="font-sans text-sm font-black text-[#21164E] leading-tight block">На основе практики</span>
+              <span className="font-sans text-xs text-[#514B6F] leading-relaxed block mt-1">
                 Проверенная методика на реальных управленческих паттернах.
               </span>
             </span>
@@ -985,8 +985,8 @@ export default function DiagnosticWidget({ onDiagnosticComplete }: DiagnosticWid
               <Check className="w-7 h-7" aria-hidden="true" />
             </span>
             <span className="text-left">
-              <span className="font-sans text-lg font-black text-[#21164E] leading-tight block">Понятный результат</span>
-              <span className="font-sans text-base text-[#514B6F] leading-relaxed block mt-1">
+              <span className="font-sans text-sm font-black text-[#21164E] leading-tight block">Понятный результат</span>
+              <span className="font-sans text-xs text-[#514B6F] leading-relaxed block mt-1">
                 Чёткие выводы и зоны внимания, которые можно обсудить сразу.
               </span>
             </span>
